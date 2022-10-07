@@ -434,12 +434,9 @@ function testimonial_shortcode_callback($atts)
             }
 
             public function form($instance)
-            {
-                echo "<pre>";
-                print_r($instance);
-                echo "</pre>";
+            { 
                 $i = 1;
-                $jsonData = json_encode($instance);
+               
                 $title    = $instance['title'];
                 ?>
                 <!-- Title -->
