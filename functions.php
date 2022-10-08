@@ -434,9 +434,8 @@ function testimonial_shortcode_callback($atts)
             }
 
             public function form($instance)
-            { 
+            {
                 $i = 1;
-               
                 $title    = $instance['title'];
                 ?>
                 <!-- Title -->
@@ -445,14 +444,14 @@ function testimonial_shortcode_callback($atts)
                     </label></p>
                 <div class="widget-help">
                     <p><label for="Enter the Question">Enter The Question</label>
-                        <input class="widefat" id="<?php echo $this->get_field_id('question-' . $i); ?>" name="<?php echo $this->get_field_name('question-' . $i); ?>" type="text" value="<?php echo esc_attr($instance['question-' . $i]); ?>" />
+                        <input class="widefat" id="<?php echo $this->get_field_id('question-1'); ?>" name="<?php echo $this->get_field_name('question-1'); ?>" type="text" value="<?php echo esc_attr($instance['question-' . $i]); ?>" />
                     </p>
                     <!-- Limit -->
                     <p><label for="Enter the Answer">Enter the Answer</label>
-                        <textarea class="widefat" id="<?php echo $this->get_field_id('answer-' . $i); ?>" name="<?php echo $this->get_field_name('answer-' . $i); ?>" type="text" cols="46" rows="10"><?php echo esc_attr($instance['answer-' . $i]); ?></textarea>
+                        <textarea class="widefat" id="<?php echo $this->get_field_id('answer-1'); ?>" name="<?php echo $this->get_field_name('answer-1'); ?>" type="text" cols="46" rows="10"><?php echo esc_attr($instance['answer-' . $i]); ?></textarea>
                     </p>
                 </div>
-                <button type="button" class="btn-add" onclick='Add_More_Field("<?php echo $jsonData ?>")' value="Add more">Add more</button>
+                <button type="button" class="btn-add" onclick='Add_More_Field("<?php echo $this->get_field_id("question-") ?>","<?php echo $this->get_field_name("question-") ?>","<?php echo $this->get_field_id("answer-") ?>","<?php echo $this->get_field_name("answer-") ?>")' value="Add more">Add more</button>
             <?php
             }
 
