@@ -422,14 +422,7 @@ function testimonial_shortcode_callback($atts)
                 echo $args['before_widget'];
                 $i = 1;
                 foreach ($instance as $k => $v) {
-                    if ($k == 'title') {
-                        echo "<h6>" . $v . " : </h6>";
-                    } else if ($k == 'question-' . $i) {
-                        echo "<h6> Q. " . $v . "</h6>";
-                    } else if ($k == 'answer-' . $i) {
-                        echo "<h6> Ans. " . $v . "</h6>";
-                        $i++;
-                    }
+                    echo $k." : ".$v."<br>";
                 }
             }
 
