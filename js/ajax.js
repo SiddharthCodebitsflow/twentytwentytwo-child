@@ -22,12 +22,15 @@ function getData(maxPage, testimonialId_name) {
 }
 let i = 1;
 let maxquestion = 1;
-function Add_More_Field() {
+function Add_More_Field(questionId, questionName, answerId, answerName) {
+    questionName = questionName.slice(0, -1);
+    answerName = answerName.slice(0, -1);
+    // alert(questionId + " \n" + questionName + " \n" + answerId + " \n" + answerName);
     i++;
-    questionId = 'widget-faq_ask_question-7-question-' + i;
-    questionName = 'widget-faq_ask_question[7][question-' + i + ']';
-    answerId = 'widget-faq_ask_question-7-answer-' + i;
-    answerName = 'widget-faq_ask_question[7][answer-' + i + ']';
+    questionId = questionId + '-' + i;
+    questionName = questionName + i + ']';
+    answerId = answerId + '-' + i;
+    answerName = answerName + i + ']';
     maxquestion++;
     if (maxquestion <= 5) {
         jQuery.ajax({
